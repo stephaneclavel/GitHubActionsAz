@@ -40,5 +40,7 @@ jobs:
         run: terraform plan
 
       - name: close Az storage fw
-        run:  az storage account network-rule remove --resource-group "tstate" --account-name "tstate25079" --ip-address $mypublicip
+        run:  | 
+          export mypublicip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+          az storage account network-rule remove --resource-group "tstate" --account-name "tstate25079" --ip-address $mypublicip
 
