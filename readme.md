@@ -2,9 +2,11 @@ adapted from:
 https://www.blendmastersoftware.com/blog/deploying-to-azure-using-terraform-and-github-actions
  
 changes:
-- added actions to open/close Az storage account (used for TF remote state) firewall on the fly
+- added actions to open/close Az storage account (used for TF remote state) firewall on the fly in order to secure the storage account (not open to any or open to all Azure regions where GH actions runners can be deployed)
 - TF 0.14 provider reqs
-- issue described below
+- issue described below to access remote backend
+
+note: as per https://discuss.hashicorp.com/t/terraform-init-intermittently-failing-in-azure-devops-pipeline/8356/2 storage account used to store state file can't be in same region as the runner. This is why a storage account located in France region is specified. 
  
 to fix issue accessing remote backend
  
