@@ -7,7 +7,7 @@ changes:
 - issue described below
  
 to fix issue accessing remote backend
-
+ 
 https://terraformwithkushagra.blogspot.com/2019/12/error-inspecting-states-in-azurerm.html
 
 1/ delete .terraform folder
