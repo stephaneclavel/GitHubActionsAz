@@ -16,6 +16,8 @@ https://terraformwithkushagra.blogspot.com/2019/12/error-inspecting-states-in-az
 2/ run
 terraform init -backend-config="access_key=$(az storage account keys list --resource-group "tstate" --account-name "tstate25079" --query '[0].value' -o tsv)"
 
+Ressourge-group is container name. Account-name is storage account name. 
+
 Error:
 
 TF_LOG=TRACE terraform init
